@@ -1,0 +1,9 @@
+<div *ngFor="let post of posts">
+    <h3><a [routerLink]="['/posts', post.id]">{{ post.title }}</a></h3> <!-- ✅ Changed from href to routerLink -->
+    <p>by {{ post.firstName }} {{ post.lastName }} on {{ post.dateCreated | date:'medium' }}</p>
+    <hr>
+</div>
+
+<div *ngIf="posts?.length === 0">
+    <p>No posts found.</p>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="post">
+    <h1>{{ post.title }}</h1>
+    <p><strong>By:</strong> {{ post.firstName }} {{ post.lastName }} ({{ post.userName }})</p>
+    <p><strong>Date:</strong> {{ post.dateCreated | date:'full' }}</p>
+    <hr>
+    <div style="white-space: pre-line;">{{ post.body }}</div>
+</div>
+
+<div *ngIf="!post">
+    <p>Loading post...</p>
+</div>
+
+<a [routerLink]="['/']">← Back to Posts</a>
